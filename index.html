@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>استبيان صحي</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="background-hearts" id="hearts"></div>
+<div class="container">
+
+    <!-- User info box -->
+    <div class="box" id="userBox">
+        <h2>👋 Welcome!</h2>
+        <p>Enter your information before starting the questionnaire</p>
+        <input type="text" id="username" placeholder="✍️ Name">
+        <input type="text" id="userid" placeholder="🆔 ID">
+        <button onclick="startSurvey()">Start</button>
+    </div>
+
+    <!-- Questionnaire -->
+    <div id="game" style="display:none;">
+
+        <!-- Level 1 -->
+        <div class="level" id="level1">
+            <div class="progress">Level 1/17</div>
+            <h3>👤 Age?</h3>
+            <input type="number" id="age" placeholder="Enter your age" required>
+            <button onclick="nextLevel(1)">Next</button>
+        </div>
+
+        <!-- Level 2 -->
+        <div class="level" id="level2">
+            <div class="progress">Level 2/17</div>
+            <h3>👩‍🦱 Sex</h3>
+            <select id="sex" required>
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <button onclick="nextLevel(2)">Next</button>
+        </div>
+
+        <!-- Level 3 -->
+        <div class="level" id="level3">
+            <div class="progress">Level 3/17</div>
+            <h3>⚖️ Weight (kg)</h3>
+            <input type="number" id="weight" placeholder="Enter your weight">
+            <button onclick="nextLevel(3)">Next</button>
+        </div>
+
+        <!-- Level 4 -->
+        <div class="level" id="level4">
+            <div class="progress">Level 4/17</div>
+            <h3>📏 Height (cm)</h3>
+            <input type="number" id="height" placeholder="Enter your height">
+            <button onclick="nextLevel(4)">Next</button>
+        </div>
+
+        <!-- Level 5 -->
+        <div class="level" id="level5">
+            <div class="progress">Level 5/17</div>
+            <h3>💼 Job</h3>
+            <input type="text" id="job" placeholder="Enter your job">
+            <button onclick="nextLevel(5)">Next</button>
+        </div>
+
+        <!-- Level 6 -->
+        <div class="level" id="level6">
+            <div class="progress">Level 6/17</div>
+            <h3>🚶 Walking is important. How many steps do you take daily?</h3>
+            <select id="steps">
+                <option value="">Select</option>
+                <option>Didn't know it matters</option>
+                <option>1,000-5,000</option>
+                <option>5,000-10,000</option>
+                <option>10,000+</option>
+            </select>
+            <button onclick="nextLevel(6)">Next</button>
+        </div>
+
+        <!-- Level 7 -->
+        <div class="level" id="level7">
+            <div class="progress">Level 7/17</div>
+            <h3>🥤 Drinking enough fluids is important. How much water do you drink daily?</h3>
+            <select id="water">
+                <option value="">Select</option>
+                <option>Don't track</option>
+                <option>0.5-1 L</option>
+                <option>1-2 L</option>
+                <option>2-3 L</option>
+                <option>3+ L</option>
+            </select>
+            <button onclick="nextLevel(7)">Next</button>
+        </div>
+
+        <!-- Level 8 -->
+        <div class="level" id="level8">
+            <div class="progress">Level 8/17</div>
+            <h3>🚬 Smoking is harmful. Which type do you think is less harmful?</h3>
+            <select id="smoking">
+                <option value="">Select</option>
+                <option>Cigarettes</option>
+                <option>Shisha</option>
+                <option>Vape</option>
+                <option>IQOS</option>
+            </select>
+            <button onclick="nextLevel(8)">Next</button>
+        </div>
+
+        <!-- Level 9 -->
+        <div class="level" id="level9">
+            <div class="progress">Level 9/17</div>
+            <h3>🧂 Recommended daily salt intake. How many spoons do you consume?</h3>
+            <select id="salt">
+                <option value="">Select</option>
+                <option>0-0.5 spoon</option>
+                <option>1-3</option>
+                <option>4-7</option>
+                <option>7+</option>
+            </select>
+            <button onclick="nextLevel(9)">Next</button>
+        </div>
+
+        <!-- Level 10 -->
+        <div class="level" id="level10">
+            <div class="progress">Level 10/17</div>
+            <h3>🏃‍♂️ Is exercise part of your life?</h3>
+            <select id="exercise">
+                <option value="">Select</option>
+                <option>No</option>
+                <option>Yes</option>
+            </select>
+            <input type="text" id="exerciseDetail" placeholder="Write your form of exercise (optional)">
+            <button onclick="nextLevel(10)">Next</button>
+        </div>
+
+        <!-- Level 11 -->
+        <div class="level" id="level11">
+            <div class="progress">Level 11/17</div>
+            <h3>☕ How many spoons of sugar do you add to tea/coffee?</h3>
+            <select id="sugar">
+                <option value="">Select</option>
+                <option>0-0.5</option>
+                <option>1-2</option>
+                <option>2-4</option>
+                <option>4+</option>
+            </select>
+            <button onclick="nextLevel(11)">Next</button>
+        </div>
+
+        <!-- Level 12 -->
+        <div class="level" id="level12">
+            <div class="progress">Level 12/17</div>
+            <h3>⚡ Energy drinks, coffee, or tea — how many times do you consume caffeine daily?</h3>
+            <select id="caffeine">
+                <option value="">Select</option>
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5+</option>
+            </select>
+            <button onclick="nextLevel(12)">Next</button>
+        </div>
+
+        <!-- Level 13 -->
+        <div class="level" id="level13">
+            <div class="progress">Level 13/17</div>
+            <h3>😴 How many hours do you sleep daily?</h3>
+            <input type="text" id="sleepHours" placeholder="Write your answer">
+            <h3>⏰ What time do you usually sleep?</h3>
+            <input type="text" id="sleepTime" placeholder="Write your answer">
+            <button onclick="nextLevel(13)">Next</button>
+        </div>
+
+        <!-- Level 14 -->
+        <div class="level" id="level14">
+            <div class="progress">Level 14/17</div>
+            <h3>🦷 Dental health affects heart health. Do you maintain oral hygiene and visit a dentist regularly?</h3>
+            <select id="dentalCare">
+                <option value="">Select</option>
+                <option>Yes</option>
+                <option>No</option>
+            </select>
+            <button onclick="nextLevel(14)">Next</button>
+        </div>
+
+        <!-- Level 15 -->
+        <div class="level" id="level15">
+            <div class="progress">Level 15/17</div>
+            <h3>💓 Do you monitor your blood pressure?</h3>
+            <select id="bpCheck">
+                <option value="">Select</option>
+                <option>Yes</option>
+                <option>No</option>
+            </select>
+            <button onclick="nextLevel(15)">Next</button>
+        </div>
+
+        <!-- Level 16 -->
+        <div class="level" id="level16">
+            <div class="progress">Level 16/17</div>
+            <h3>👨‍👩‍👦 Family medical history (choose all that apply)</h3>
+            <select id="familyHistory" multiple>
+                <option value="Heart">Heart</option>
+                <option value="Diabetes">Diabetes</option>
+                <option value="Hypertension">Hypertension</option>
+                <option value="Thyroid">Thyroid</option>
+                <option value="Don't know">Don't know</option>
+                <option value="None">None</option>
+                <option value="Other">Other (write your own)</option>
+            </select>
+            <input type="text" id="familyOther" placeholder="Write your answer (optional)">
+            <button onclick="nextLevel(16)">Next</button>
+        </div>
+
+        <!-- Level 17 -->
+        <div class="level" id="level17">
+            <div class="progress">Level 17/17</div>
+            <h3>🎉 Thank you for completing the questionnaire! 💕 Your health matters</h3>
+            <button onclick="submitSurvey()">Submit</button>
+        </div>
+
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
